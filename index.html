@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>GreenNeuron.AI | AI for Biology, Biotech and Pharma</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="GreenNeuron.AI brings modern AI to biology, biotechnology and pharmaceutical research." />
+  <link rel="icon" href="GreenNeuronAI_logo_v1.png" />
+
+  <style>
+    :root {
+      --bg: #f5f5f7;
+      --card-bg: #ffffff;
+      --text-main: #111827;
+      --text-muted: #4b5563;
+      --accent: #059669;
+      --border-subtle: #e5e7eb;
+      --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.08);
+      --radius-xl: 24px;
+      --transition-fast: 180ms ease-out;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html,
+    body {
+      height: 100%;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+      background: radial-gradient(circle at top left, #e0f2fe 0, var(--bg) 45%) fixed;
+      color: var(--text-main);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .page {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 3.5rem 1.75rem;
+    }
+
+    .shell {
+      width: 100%;
+      max-width: 1040px;
+      background: rgba(255, 255, 255, 0.88);
+      backdrop-filter: blur(18px);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(209, 213, 219, 0.7);
+      padding: 2.75rem 3.25rem;
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.1fr);
+      gap: 2.75rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .shell::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 120% -10%, rgba(34, 197, 94, 0.15), transparent 55%);
+      pointer-events: none;
+    }
+
+    .column {
+      position: relative;
+      z-index: 1;
+    }
+
+    .logo-row {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .logo-mark {
+      width: 72px;
+      max-width: 20vw;
+    }
+
+    .brand-wordmark {
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.4rem 0.9rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      background: rgba(248, 250, 252, 0.9);
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-bottom: 1.1rem;
+    }
+
+    .pill-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 0 6px rgba(16, 185, 129, 0.25);
+    }
+
+    h1 {
+      font-size: clamp(2.1rem, 3vw, 2.6rem);
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      margin-bottom: 0.9rem;
+    }
+
+    .tagline {
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: var(--accent);
+      margin-bottom: 1.2rem;
+    }
+
+    .lead {
+      font-size: 0.98rem;
+      line-height: 1.65;
+      color: var(--text-muted);
+      max-width: 34rem;
+      margin-bottom: 1.9rem;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      align-items: center;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.75rem 1.4rem;
+      border-radius: 999px;
+      border: 0;
+      font-size: 0.9rem;
+      font-weight: 500;
+      cursor: pointer;
+      background: linear-gradient(135deg, #16a34a, #0f766e);
+      color: #ffffff;
+      text-decoration: none;
+      box-shadow: 0 12px 30px rgba(34, 197, 94, 0.4);
+      transition: transform var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast);
+    }
+
+    .btn-primary span {
+      margin-left: 0.4rem;
+      font-size: 1rem;
+      transform: translateY(1px);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 16px 40px rgba(22, 163, 74, 0.5);
+      background: linear-gradient(135deg, #22c55e, #0e7490);
+    }
+
+    .btn-secondary {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      text-decoration: none;
+      padding: 0.4rem 0.2rem;
+      border-bottom: 1px solid rgba(156, 163, 175, 0.6);
+    }
+
+    .meta {
+      margin-top: 1.3rem;
+      font-size: 0.78rem;
+      color: #9ca3af;
+    }
+
+    .meta span {
+      font-variant-numeric: tabular-nums;
+    }
+
+    .right-panel {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: rgba(15, 23, 42, 0.94);
+      border-radius: 20px;
+      padding: 1.4rem 1.5rem;
+      color: #e5e7eb;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      box-shadow: 0 18px 35px rgba(15, 23, 42, 0.6);
+      font-size: 0.82rem;
+    }
+
+    .card-title {
+      font-size: 0.82rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+      color: #a5b4fc;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.75rem;
+    }
+
+    .tech-pill {
+      padding: 0.22rem 0.6rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.65);
+      font-size: 0.7rem;
+      color: #e5e7eb;
+      background: rgba(15, 23, 42, 0.8);
+    }
+
+    .footnote {
+      font-size: 0.74rem;
+      color: var(--text-muted);
+      margin-top: 2.1rem;
+    }
+
+    .footnote a {
+      color: inherit;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(148, 163, 184, 0.7);
+    }
+
+    @media (max-width: 900px) {
+      .shell {
+        padding: 2.2rem 1.8rem;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 2.1rem;
+      }
+
+      .right-panel {
+        flex-direction: row;
+      }
+
+      .card {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .page {
+        padding: 1.9rem 1.1rem;
+      }
+
+      .shell {
+        padding: 1.8rem 1.4rem;
+      }
+
+      .logo-row {
+        margin-bottom: 1.1rem;
+      }
+
+      .logo-mark {
+        width: 60px;
+      }
+
+      h1 {
+        font-size: 1.9rem;
+      }
+
+      .actions {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .right-panel {
+        flex-direction: column;
+      }
+
+      .card {
+        padding: 1.2rem 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="shell">
+      <div class="column">
+        <div class="logo-row">
+          <img src="GreenNeuronAI_logo_v1.png" alt="GreenNeuron.AI logo" class="logo-mark" />
+          <span class="brand-wordmark">GreenNeuron.AI</span>
+        </div>
+
+        <div class="pill">
+          <div class="pill-dot"></div>
+          <span>Applied machine learning for the life sciences</span>
+        </div>
+
+        <h1>Intelligent systems for biological discovery</h1>
+        <p class="tagline">AI for Biology, Biotech and Pharma</p>
+
+        <p class="lead">
+          GreenNeuron.AI builds models that understand complex biological data, from single cells to large clinical cohorts. We design and deploy tailored AI that integrates seamlessly with experimental and R&amp;D workflows.
+        </p>
+
+        <div class="actions">
+          <!-- Update the email address to your preferred contact -->
+          <a class="btn-primary" href="mailto:contact@greenneuron.ai">
+            Contact the team
+            <span>↗</span>
+          </a>
+          <a class="btn-secondary" href="#focus">
+            Explore focus areas
+          </a>
+        </div>
+
+        <p class="meta">
+          Currently in private preview. <span>Accepting a small number of collaboration enquiries.</span>
+        </p>
+      </div>
+
+      <div class="column right-panel" id="focus">
+        <article class="card">
+          <h2 class="card-title">Where we focus</h2>
+          <p>
+            We partner with teams who need high quality models rather than generic tooling. Typical work includes:
+          </p>
+          <ul style="margin-top: 0.75rem; padding-left: 1.1rem; line-height: 1.55;">
+            <li>Multi omic integration for target and biomarker discovery</li>
+            <li>Foundation and domain adapted models for biological sequences, cells and images</li>
+            <li>Decision support for pre clinical and translational programmes</li>
+          </ul>
+          <div class="pill-row">
+            <span class="tech-pill">Single cell &amp; spatial</span>
+            <span class="tech-pill">Clinical &amp; real world data</span>
+            <span class="tech-pill">Generative models</span>
+            <span class="tech-pill">MLOps for regulated settings</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <h2 class="card-title">What you get</h2>
+          <p>
+            Opinionated end to end support: model design, clean engineering, reproducible analysis and clear communication, so your scientists and decision makers can trust the output.
+          </p>
+        </article>
+      </div>
+
+      <p class="footnote">
+        GreenNeuron.AI · Cambridge, UK · For enquiries, email
+        <a href="mailto:contact@greenneuron.ai">contact@greenneuron.ai</a>
+      </p>
+    </section>
+  </main>
+</body>
+</html>
