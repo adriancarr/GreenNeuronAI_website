@@ -1,102 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <title>GreenNeuron.AI | AI for Biology, Biotech and Pharma</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="AI for Biology, Biotech and Pharma" />
-  <link rel="icon" href="GreenNeuronAI_logo_v1.png" />
+    <meta charset="UTF-8" />
+    <title>GreenNeuron.AI | AI for Biology, Biotech and Pharma</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="AI for Biology, Biotech and Pharma" />
+    <link rel="icon" href="GreenNeuronAI_logo_v1.png" />
 
-  <style>
-    :root {
-      --bg: #f5f5f7;
-      --text-main: #111827;
-      --text-muted: #4b5563;
-    }
+    <style>
+        :root {
+            --bg: #f5f5f7;
+            --text-main: #111827;
+            --text-muted: #4b5563;
+        }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    html,
-    body {
-      height: 100%;
-    }
+        html,
+        body {
+            height: 100%;
+        }
 
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, sans-serif;
-      background: radial-gradient(circle at top, #e0f2fe 0, var(--bg) 55%);
-      color: var(--text-main);
-      -webkit-font-smoothing: antialiased;
-    }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, sans-serif;
+            background: radial-gradient(circle at top, #e0f2fe 0, var(--bg) 55%);
+            color: var(--text-main);
+            -webkit-font-smoothing: antialiased;
+        }
 
-    .page {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 2rem;
-    }
+        .page {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
 
-    .center {
-      text-align: center;
-      max-width: 720px;
-      width: 100%;
-    }
+        .center {
+            text-align: center;
+            max-width: 720px;
+            width: 100%;
+        }
 
-    .logo {
-      width: min(520px, 80vw);
-      height: auto;
-      display: block;
-      margin: 0 auto 2.5rem;
-    }
+        .logo {
+            width: min(520px, 80vw);
+            height: auto;
+            display: block;
+            margin: 0 auto 2.5rem;
+        }
 
-    h1 {
-      font-size: clamp(1.4rem, 2.4vw, 1.7rem);
-      font-weight: 500;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      margin-bottom: 1.2rem;
-    }
+        h1 {
+            font-size: clamp(1.4rem, 2.4vw, 1.7rem);
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 1.2rem;
+        }
 
-    p {
-      font-size: clamp(0.98rem, 1.2vw, 1.05rem);
-      line-height: 1.7;
-      color: var(--text-muted);
-      max-width: 640px;
-      margin: 0 auto;
-    }
+        p {
+            font-size: clamp(0.98rem, 1.2vw, 1.05rem);
+            line-height: 1.7;
+            color: var(--text-muted);
+            max-width: 640px;
+            margin: 0 auto;
+        }
 
-    @media (max-width: 600px) {
-      .page {
-        padding: 1.5rem;
-      }
+        @media (max-width: 600px) {
+            .page {
+                padding: 1.5rem;
+            }
 
-      .logo {
-        margin-bottom: 2rem;
-      }
-    }
-  </style>
+            .logo {
+                margin-bottom: 2rem;
+            }
+        }
+
+        .contact-container {
+            margin-top: 3rem;
+        }
+
+        .contact-link {
+            display: inline-block;
+            text-decoration: none;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            border: 1px solid rgba(75, 85, 99, 0.3);
+            padding: 0.5rem 1.2rem;
+            border-radius: 999px;
+            transition: all 0.2s ease;
+        }
+
+        .contact-link:hover {
+            background: rgba(75, 85, 99, 0.05);
+            border-color: rgba(75, 85, 99, 0.6);
+            color: var(--text-main);
+        }
+    </style>
 </head>
+
 <body>
-  <main class="page">
-    <section class="center">
-      <img
-        src="GreenNeuronAI_logo_v1.png"
-        alt="GreenNeuron.AI logo"
-        class="logo"
-      />
+    <main class="page">
+        <section class="center">
+            <img src="GreenNeuronAI_logo_v1.png" alt="GreenNeuron.AI logo" class="logo" />
 
-      <h1>AI for Biology, Biotech and Pharma</h1>
+            <h1>AI for Biology, Biotech and Pharma</h1>
 
-      <p>
-        GreenNeuron.AI leverages GenAI and LLMs to decode complex biological data—ranging from single cells and protein structures to large clinical cohorts.
-        We design and deploy tailored models that integrate seamlessly with your experimental and R&amp;D workflows.
-      </p>
-    </section>
-  </main>
+            <p>
+                GreenNeuron.AI leverages GenAI and LLMs to decode complex biological data—ranging from single cells and
+                protein structures to large clinical cohorts.
+                We design and deploy tailored models that integrate seamlessly with your experimental and R&amp;D
+                workflows.
+            </p>
+
+            <div class="contact-container">
+                <a href="mailto:info@greenneuron.ai" class="contact-link">info@greenneuron.ai</a>
+            </div>
+        </section>
+    </main>
 </body>
+
 </html>
